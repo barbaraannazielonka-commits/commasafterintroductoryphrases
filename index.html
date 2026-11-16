@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pause, Comma: Commas after Introductory Phrases</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--ink:#1d1f3d;--mute:#5a5d80;--line:#dcdeef;--brand:#3a3fb5;--hi:#ffe45c;--ok:#157a4a;--okbg:#dff5e8;--bad:#b3261e;--badbg:#fde4e1;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12132b;--card:#1c1e3f;--ink:#eceefc;--mute:#a6a9d0;--line:#34376a;--brand:#9ea3ff;--hi:#ffe45c;--ok:#6fe3a3;--okbg:#17432f;--bad:#ff9a92;--badbg:#4a2024;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#12132b;--card:#1c1e3f;--ink:#eceefc;--mute:#a6a9d0;--line:#34376a;--brand:#9ea3ff;--hi:#ffe45c;--ok:#6fe3a3;--okbg:#17432f;--bad:#ff9a92;--badbg:#4a2024;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-padding-top:70px;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.15;margin:0 0 .5em}
+.wrap{max-width:800px;margin:0 auto;padding:0 18px}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--card);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--card);z-index:30}
+.bar .wrap{display:flex;gap:14px;align-items:center;padding-top:9px;padding-bottom:9px;font-size:14px}
+.track{flex:1;height:10px;background:var(--line);border-radius:9px;overflow:hidden}.fill{height:100%;width:0;background:var(--brand);transition:width .4s}
+.hero{padding:56px 0 30px}
+.hero .big{font:800 clamp(90px,26vw,200px)/.8 "Bricolage Grotesque",sans-serif;color:var(--brand);margin:0 0 10px}
+.hero h1{font-size:clamp(30px,7vw,52px)}
+.hero p{max-width:560px;color:var(--mute);font-size:19px}
+.btn{font:inherit;font-weight:600;border:0;border-radius:10px;background:var(--brand);color:#fff;padding:10px 18px;cursor:pointer}
+:root:not([data-theme="light"]) .btn{color:#12132b}
+.btn.ghost{background:transparent;color:var(--brand);border:2px solid var(--brand)}
+.btn:focus-visible,select:focus-visible,input:focus-visible,.gap:focus-visible,.chip:focus-visible{outline:3px solid var(--hi);outline-offset:2px}
+section{padding:30px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:14px 0}
+.ex{background:var(--card);border-left:6px solid var(--brand);padding:10px 16px;margin:10px 0;border-radius:0 10px 10px 0}
+mark{background:var(--hi);color:#1d1f3d;padding:0 3px;border-radius:3px}
+.no{color:var(--bad)}.yes{color:var(--ok)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.chip{font:inherit;border:1.5px solid var(--brand);background:var(--card);color:var(--ink);border-radius:20px;padding:5px 14px;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--brand);color:#fff}
+:root:not([data-theme="light"]) .chip[aria-pressed=true]{color:#12132b}
+#chipout{min-height:60px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.tag{display:inline-block;font-weight:700;font-size:14px;color:var(--brand)}
+.act{border-top:3px solid var(--brand);padding-top:24px}
+.item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0}
+.item.right{border-color:var(--ok);background:var(--okbg)}.item.wrong{border-color:var(--bad);background:var(--badbg)}
+.fb{font-size:15px;margin-top:6px;min-height:0}
+.opts{display:grid;gap:8px;margin-top:8px}
+.opt{font:inherit;text-align:left;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);border-radius:10px;padding:9px 12px;cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--brand)}
+.opt.pickok{background:var(--okbg);border-color:var(--ok)}.opt.pickbad{background:var(--badbg);border-color:var(--bad)}
+.toggle{display:inline-flex;vertical-align:middle;gap:4px;margin:0 4px}
+.toggle button{font:inherit;font-weight:700;border:1.5px solid var(--brand);background:var(--card);color:var(--brand);border-radius:8px;padding:0 10px;cursor:pointer;min-width:44px}
+.toggle button:disabled{cursor:default;opacity:.7}
+.words{line-height:2.6}
+.w{display:inline}
+.gap{display:inline-block;width:14px;height:26px;margin:0 1px;border:0;border-bottom:3px dotted var(--line);background:transparent;color:var(--ink);font:700 22px/1 inherit;cursor:pointer;vertical-align:bottom;padding:0}
+.gap:hover:not(:disabled){border-color:var(--brand)}.gap.on{border-color:var(--brand);color:var(--brand)}
+.gap.ok{color:var(--ok)}.gap.bad{color:var(--bad)}
+select,input[type=text]{font:inherit;border:1.5px solid var(--line);border-radius:8px;padding:6px 8px;background:var(--bg);color:var(--ink);max-width:100%}
+input[type=text]{width:100%;margin-top:6px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:8px}
+.sc{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center;margin:6px 0 0;color:var(--mute);font-size:14px}
+#result{display:none;text-align:center;padding:36px 20px}
+#result .num{font:800 clamp(60px,18vw,120px)/1 "Bricolage Grotesque",sans-serif;color:var(--brand)}
+#lock{color:var(--mute);text-align:center}
+footer{margin-top:40px;padding:24px 18px;text-align:center;background:var(--brand);color:#fff;font-weight:600}
+:root:not([data-theme="light"]) footer{color:#12132b}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="bar"><div class="wrap"><strong>Score <span id="sc">0</span>/<span id="tot">0</span></strong><div class="track" aria-hidden="true"><div class="fill" id="fill"></div></div><span><span id="done">0</span> answered</span></div></div>
+
+<header class="wrap hero">
+<div class="big" aria-hidden="true">,</div>
+<h1>Pause here: commas after introductory phrases</h1>
+<p>You have probably written “To sum up we can say…” and felt something was missing. Learn the rule, test it in six different tasks and see your final score at the end.</p>
+<a href="#theory"><button class="btn">Start with the theory</button></a>
+</header>
+
+<main class="wrap">
+<section id="theory">
+<h2>Theory</h2>
+<div class="card">
+<h3>The main rule</h3>
+<p>When a sentence starts with an <b>introductory element</b>, a word or group of words that comes before the main clause, we put a comma after it. The comma marks the pause between the introduction and the real message (subject + verb).</p>
+<div class="ex"><mark>To sum up,</mark> teenagers need more sleep than adults.</div>
+<div class="ex"><mark>In conclusion,</mark> recycling saves energy.</div>
+<div class="ex"><mark>However,</mark> not everyone agrees.</div>
+</div>
+
+<div class="card">
+<h3>Tap a phrase to see it in a sentence</h3>
+<div class="chips" id="chips"></div>
+<div id="chipout" class="ex">Choose a phrase above.</div>
+</div>
+
+<h3>Six kinds of introductions</h3>
+<div class="grid">
+<div class="card"><span class="tag">Concluding phrases</span><p><i>To sum up, In conclusion, To conclude, All in all.</i></p><p class="yes">To conclude, we need stronger rules.</p></div>
+<div class="card"><span class="tag">Transition words</span><p><i>However, Therefore, Meanwhile, Finally, Unfortunately.</i></p><p class="yes">Therefore, we left early.</p></div>
+<div class="card"><span class="tag">Prepositional phrases</span><p><i>After the match, Despite the rain, In my opinion.</i></p><p class="yes">After the match, the fans went home.</p></div>
+<div class="card"><span class="tag">Subordinate clauses</span><p><i>Because it was late, Although she was tired, If you try,</i></p><p class="yes">If you practise, you will improve.</p></div>
+<div class="card"><span class="tag">-ing / -ed phrases</span><p><i>Opening the door, Tired of waiting,</i></p><p class="yes">Opening the door, Sam smiled.</p></div>
+<div class="card"><span class="tag">Interjections and fillers</span><p><i>Well, Of course, Honestly, Yes,</i></p><p class="yes">Of course, I will help.</p></div>
+</div>
+
+<div class="card">
+<h3>When there is no comma</h3>
+<p>If the main clause comes <b>first</b> and the extra information comes <b>after</b> it, we usually do not need a comma.</p>
+<div class="ex"><span class="yes">✓ Because it rained, we stayed in.</span> (introduction first, so a comma)<br><span class="yes">✓ We stayed in because it rained.</span> (main clause first, so no comma)</div>
+<p>Also: a very short phrase (<i>On Monday we have a test.</i>) may skip the comma, but a comma is never wrong and is the safer choice in school writing. In this lesson, the tasks use clear cases.</p>
+</div>
+
+<div class="card">
+<h3>Common mistakes</h3>
+<p class="no">✗ To sum up the story is about courage. (missing comma)</p>
+<p class="no">✗ To sum, up the story is about courage. (comma in the wrong place)</p>
+<p class="no">✗ However, the plan works, (comma at the end, not needed)</p>
+<p class="yes">✓ To sum up, the story is about courage.</p>
+<p><b>Quick test:</b> find the subject and the verb of the main clause. Everything before them is the introduction, so put the comma just before the subject.</p>
+</div>
+</section>
+
+<section class="act" id="practice">
+<h2>Practice</h2>
+<p>Six activities. Each question can be answered once, so think before you click. Your score appears when everything is done.</p>
+<div id="acts"></div>
+<div id="lock"></div>
+<div id="result" class="card" aria-live="polite">
+<h2>Your final score</h2>
+<div class="num"><span id="rs">0</span>/<span id="rt">0</span></div>
+<p id="rmsg"></p>
+<button class="btn" id="again">Try again</button>
+</div>
+</section>
+</main>
+
+<footer>Nannestad High School- Barbara Anna Zielonka</footer>
+
+<script>
+(function(){
+var $=function(s,r){return (r||document).querySelector(s)};
+function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e}
+var score=0,total=0,answered=0;
+function upd(){$('#sc').textContent=score;$('#tot').textContent=total;$('#done').textContent=answered;
+ $('#fill').style.width=(total?answered/total*100:0)+'%';
+ if(answered===total&&total>0){$('#rs').textContent=score;$('#rt').textContent=total;
+  var p=score/total,m=p>=.9?'Outstanding! You have mastered introductory commas.':p>=.75?'Very good. Review the items you missed and you are there.':p>=.5?'Good start. Reread the theory and try again.':'Keep practising. Read the theory once more and retry.';
+  $('#rmsg').textContent='That is '+Math.round(p*100)+'%. '+m;$('#result').style.display='block';$('#lock').textContent='';
+  $('#result').scrollIntoView({behavior:'smooth',block:'center'})}
+ else{$('#result').style.display='none';$('#lock').textContent='Answer every question to unlock your score ('+(total-answered)+' points still to earn).'}}
+function reg(box,ok,fb,pts){ // mark item
+ if(box.dataset.done)return;box.dataset.done=1;answered++;if(ok)score+=pts;
+ box.classList.add(ok?'right':'wrong');var f=$('.fb',box);f.innerHTML=(ok?'✓ Correct. ':'✗ Not quite. ')+fb;upd()}
+
+/* chips */
+var ph={"To sum up":"To sum up, a healthy lifestyle starts with sleep.","To conclude":"To conclude, the project was worth the effort.","In conclusion":"In conclusion, social media has pros and cons.","All in all":"All in all, it was a great trip.","As a result":"As a result, the match was cancelled.","For example":"For example, many teens sleep too little.","On the other hand":"On the other hand, online lessons save time.","In my opinion":"In my opinion, homework should be shorter.","Despite the rain":"Despite the rain, the concert went ahead.","However":"However, not everyone agrees.","Meanwhile":"Meanwhile, the others were waiting outside.","First of all":"First of all, we need a plan."};
+var cb=$('#chips');Object.keys(ph).forEach(function(k){var b=el('button','chip',k);b.setAttribute('aria-pressed','false');b.onclick=function(){cb.querySelectorAll('.chip').forEach(function(c){c.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true');$('#chipout').innerHTML=ph[k].replace(k+',','<mark>'+k+',</mark>')};cb.appendChild(b)});
+
+var acts=$('#acts');
+function section(title,intro){var s=el('div','',null);s.appendChild(el('h3','',title));s.appendChild(el('p','',intro));s.style.marginTop='28px';acts.appendChild(s);return s}
+
+var posn=[2,0,2,1];function shq(q,i){var c=q[1][q[2]],r=q[1].filter(function(_,k){return k!==q[2]}),p=posn[i%4];r.splice(p,0,c);return [q[0],r,p,q[3]]}
+/* 1 MCQ */
+var mcq=[["Which sentence is punctuated correctly?",["However the results surprised everyone.","However, the results surprised everyone.","However the results, surprised everyone."],1,"A comma follows the transition word <i>However</i>."],
+["Choose the correct sentence.",["After the long exam we, went home.","After, the long exam we went home.","After the long exam, we went home."],2,"The comma goes after the whole introduction, right before the subject <i>we</i>."],
+["Which one is correct?",["First, of all we need a plan.","First of all, we need a plan.","First of all we need, a plan."],1,"<i>First of all</i> is one unit, so the comma comes after it."],
+["Choose the correct sentence.",["Walking home from school Mia met her teacher.","Walking home from school, Mia met her teacher.","Walking, home from school Mia met her teacher."],1,"An -ing phrase at the start is followed by a comma."]];
+var s1=section('Activity 1: Choose the correct sentence','Pick the one sentence with perfect comma use.');
+mcq.forEach(function(q,i){total++;q=shq(q,i);var b=el('div','item','<b>'+(i+1)+'. '+q[0]+'</b><div class="opts"></div><div class="fb"></div>');var o=$('.opts',b);
+ q[1].forEach(function(t,j){var x=el('button','opt',t);x.onclick=function(){if(b.dataset.done)return;o.querySelectorAll('.opt').forEach(function(y,k){y.disabled=true;if(k===q[2])y.classList.add('pickok')});if(j!==q[2])x.classList.add('pickbad');reg(b,j===q[2],q[3],1)};o.appendChild(x)});s1.appendChild(b)});
+
+/* 2 comma or no comma */
+var cn=[["As a result","the match was cancelled.",1,"<i>As a result</i> is a linking phrase at the start."],
+["We went to the cinema","after we finished homework.",0,"The main clause comes first, so no comma."],
+["Because it was raining","we stayed inside.",1,"A subordinate clause at the start needs a comma."],
+["In my opinion","social media affects sleep.",1,"Opinion phrases are followed by a comma."],
+["She was tired","because she had studied all night.",0,"The extra information comes after the main clause, so no comma."],
+["Unfortunately","the bus was late.",1,"A transition word at the start takes a comma."],
+["The students who study regularly","usually pass the test.",0,"This is the subject of the sentence, not an introduction."]];
+var s2=section('Activity 2: Comma or no comma?','Decide what belongs in the gap.');
+cn.forEach(function(q,i){total++;var b=el('div','item','<b>'+(i+1)+'.</b> '+q[0]+'<span class="toggle"></span> '+q[1]+'<div class="fb"></div>');var t=$('.toggle',b);
+ (i%2?[['none',0],[',',1]]:[[',',1],['none',0]]).forEach(function(c){var x=el('button','',c[0]==='none'?'∅':',');x.setAttribute('aria-label',c[1]?'comma':'no comma');x.onclick=function(){if(b.dataset.done)return;t.querySelectorAll('button').forEach(function(y){y.disabled=true});reg(b,c[1]===q[2],q[3],1)};t.appendChild(x)});s2.appendChild(b)});
+s2.appendChild(el('p','sc','∅ means no comma.'));
+
+/* 3 click the spot */
+var cs=[["To sum up the story teaches us about courage.",2],["Before leaving the house Tom checked the windows.",3],["Meanwhile the rest of the class was waiting outside.",0],["If you want to pass the test you must practise daily.",6],["In addition to this the school offers free lunch.",3]];
+var s3=section('Activity 3: Place the comma','Click the dotted gap where the comma belongs.');
+cs.forEach(function(q,i){total++;var w=q[0].split(' '),b=el('div','item','<b>'+(i+1)+'.</b><div class="words"></div><div class="fb"></div>'),d=$('.words',b);
+ w.forEach(function(t,j){d.appendChild(el('span','w',t));if(j<w.length-1){var g=el('button','gap','');g.setAttribute('aria-label','comma after '+t);g.onclick=function(){if(b.dataset.done)return;d.querySelectorAll('.gap').forEach(function(y){y.disabled=true});g.textContent=',';g.classList.add('on');var ok=j===q[1];g.classList.add(ok?'ok':'bad');if(!ok){var r=d.querySelectorAll('.gap')[q[1]];r.textContent=',';r.classList.add('ok')}reg(b,ok,'The comma goes after “'+w.slice(0,q[1]+1).join(' ')+'”.',1)};d.appendChild(g)}else{d.appendChild(document.createTextNode(' '))}});s3.appendChild(b)});
+s3.appendChild(el('p','sc','The final period is already in place.'));
+
+/* 4 correct/incorrect */
+var ci=[["For example, many teens sleep too little.",1,"Correct: comma after <i>For example</i>."],["On the other hand the plan has risks.",0,"A comma is missing after <i>On the other hand</i>."],["In conclusion, we should recycle more.",1,"Correct."],["Despite the heavy rain, the concert went ahead.",1,"Correct: comma after the introductory phrase."],["Therefore we decided to leave early.",0,"Put a comma after <i>Therefore</i>."],["After, dinner we watched a film.",0,"The comma belongs after <i>dinner</i>, not after <i>After</i>."]];
+var s4=section('Activity 4: Error hunt','Is the punctuation correct or incorrect?');
+ci.forEach(function(q,i){total++;var b=el('div','item','<b>'+(i+1)+'.</b> '+q[0]+'<div class="row"></div><div class="fb"></div>');var r=$('.row',b);
+ (i%2?[['Incorrect',0],['Correct',1]]:[['Correct',1],['Incorrect',0]]).forEach(function(c){var x=el('button','btn ghost',c[0]);x.onclick=function(){if(b.dataset.done)return;r.querySelectorAll('button').forEach(function(y){y.disabled=true});reg(b,c[1]===q[1],q[2],1)};r.appendChild(x)});s4.appendChild(b)});
+
+/* 6 type it */
+var ty=[["To conclude we need stronger rules.","To conclude, we need stronger rules."],["After the match the fans went home.","After the match, the fans went home."],["Of course I will help you.","Of course, I will help you."],["Running down the street Ella lost her shoe.","Running down the street, Ella lost her shoe."]];
+var s6=section('Activity 5: Rewrite it','Type each sentence again with the comma in the right place.');
+function nz(s){return s.trim().replace(/\s+/g,' ').replace(/\s+,/g,',').toLowerCase()}
+ty.forEach(function(q,i){total+=2;var b=el('div','item','<b>'+(i+1)+'.</b> '+q[0]+'<input type="text" aria-label="your answer" autocomplete="off" autocapitalize="off" spellcheck="false"><div class="row"><button class="btn ghost">Check</button></div><div class="fb"></div>');
+ var inp=$('input',b);$('button',b).onclick=function(){if(b.dataset.done||!inp.value.trim())return;inp.disabled=true;this.disabled=true;
+  var ok=nz(inp.value)===nz(q[1]);b.dataset.done=1;answered+=2;if(ok)score+=2;b.classList.add(ok?'right':'wrong');$('.fb',b).innerHTML=(ok?'✓ Correct (2 points). ':'✗ Model answer (0 points): ')+(ok?'':'<b>'+q[1]+'</b>');upd()}
+ s6.appendChild(b)});
+
+/* 7 build the best intro */
+var fl=[["_____ teenagers need at least eight hours of sleep.",["To sum up,","To sum up","To, sum up"],0,"Only the first option has the comma after the complete phrase."],
+["_____ she opened the window.",["Feeling hot,","Feeling, hot","Feeling hot"],0,"The comma ends the -ing phrase."],
+["_____ we should protect the environment.",["In conclusion we,","In conclusion,","In, conclusion"],1,"The comma comes right after <i>In conclusion</i>."],
+["_____ the team won the final.",["Although it was raining,","Although, it was raining","Although it was raining"],0,"A comma closes the subordinate clause."]];
+var s7=section('Activity 6: Complete the sentence','Pick the opening that includes the correct comma.');
+fl.forEach(function(q,i){total++;q=shq(q,i+1);var b=el('div','item','<b>'+(i+1)+'.</b> '+q[0]+'<div class="opts"></div><div class="fb"></div>');var o=$('.opts',b);
+ q[1].forEach(function(t,j){var x=el('button','opt',t);x.onclick=function(){if(b.dataset.done)return;o.querySelectorAll('.opt').forEach(function(y,k){y.disabled=true;if(k===q[2])y.classList.add('pickok')});if(j!==q[2])x.classList.add('pickbad');reg(b,j===q[2],q[3],1)};o.appendChild(x)});s7.appendChild(b)});
+
+document.querySelector('#practice p').textContent='Six activities, '+total+' points. Each question can be answered once, so think before you click. Your score appears when everything is done.';
+upd();
+$('#again').onclick=function(){location.reload()};
+})();
+</script>
+</body>
+</html>
